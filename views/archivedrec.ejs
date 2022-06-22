@@ -1,0 +1,49 @@
+<h3 class="center"> Archived Requests</h3>
+<%- include ('partials/nav') %>
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="card card-body">
+      <h5 class="center text-success">Archived Recipients</h5>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="card card-body">
+      <% if(requests) {%>
+        <% if(requests.length === 0) {%>
+            <div class="row">
+                <div class="col-md-12 m-auto">
+                    <div class="card card-body">
+                        <h5 class="center text-danger">No Archives Recipients</h5>
+                    </div>
+                </div>
+            </div>
+            <% }%>
+        <% requests.forEach(request => {%>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Blood Group</th>
+          <th>Location</th>
+          <th>Phone Number</th>
+          <th>Receive ?</th>
+        </tr>
+            <tr>
+              <td><%= request.fullName %></td>
+              <td><%= request.bloodGroup %></td>
+              <td><%= request.location %></td>
+              <td><%= request.phoneNumber %></td>
+              <td><%= request.received %></td>
+             
+            </tr>
+      </table>
+      <% }) %>
+    <% } %>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+
+<h3 class="mt-4">Dashboard</h3>
+<%- include ('partials/nav') %>
+<%- include ('partials/messages') %>
+<div class="row">
+    <div class="col-md-8 m-auto">
+        <div class="card card-body">
+            <h5 class="center text-info">Registered Users</h5>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 m-auto">
+        <strong>Name</strong>
+    </div>
+    <div class="col-md-3 m-auto">
+        <strong>Email</strong>
+    </div>
+    <div class="col-md-3 m-auto">
+        <strong>Is Admin ?</strong>
+    </div>
+    <div class="col-md-3 m-auto">
+       <strong>Make / Remove Admin</strong> 
+    </div>
+</div>
+<% if(users) {%>
+<% users.forEach(user => { %>
+    <div class="row">
+        <div class="col-md-3 m-auto">
+           <p class="text-success" ><%= user.name %></p> 
+        </div>
+        <div class="col-md-3 m-auto">
+            <p class="text-success"><%= user.email %></p> 
+        </div>
+        <div class="col-md-3 m-auto">
+            <p class="text-success" ><%= user.userType %></p> 
+        </div>
+        <% if(user.userType) { %>
+            <div class="col-md-3 m-auto">
+                <a class="text-success" onclick="window.location='/users/reverse/<%= user._id%>';" style="cursor: pointer;"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <% } else { %>
+                <div class="col-md-3 m-auto">
+                    <a class="text-success" onclick="window.location='/users/<%= user._id%>';" style="cursor: pointer;"><i class="fa fa-check-square" aria-hidden="true"></i></a>
+                </div>
+                <% } %>
+    </div>
+<% }) %>
+<% } %>
+
+

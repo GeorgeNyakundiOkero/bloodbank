@@ -1,0 +1,46 @@
+<h3 class="center">My Records ( Donations )</h3>
+<%- include ('partials/messages') %>
+<%- include ('partials/usernav') %>
+
+<div class="row">
+    <div class="col-md-8 m-auto">
+        <div class="card card-body">
+            <h4 class="center">My Donations</h4>
+        </div>
+    </div>
+</div>
+<% if(donations) { %>
+   <% if(donations.length === 0) { %>
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <div class="card card-body">
+                <h4 class="text-danger ">You have not made any donations</h4>
+            </div>
+        </div>
+    </div>
+        <% } %>
+    <% donations.forEach(donation => {%>
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <div class="card card-body">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>BloodGroup</th>
+                            <th>Donation Location</th>
+                            <th>Phone Number</th>
+                            <th>Donated?</th>
+                        </tr>
+                        <tr>
+                            <td><%= donation.fullName%></td>
+                            <td><%= donation.bloodGroup %></td>
+                            <td><%= donation.location %></td>
+                            <td><%= donation.phoneNumber %></td>
+                            <td><%= donation.donated %></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<% }) }  %>
+    

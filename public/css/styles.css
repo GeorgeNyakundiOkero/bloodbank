@@ -1,0 +1,71 @@
+.navb li {
+    float: left;
+    list-style: none;
+    padding: 10px;
+}
+.navb a{
+    text-decoration: none;
+}
+.navb ul{
+    float: right;
+}
+
+.navb a:hover {
+    text-decoration: none;
+}
+#entryform {
+    background: rgba(255,0,0,0.2);
+}
+
+.faq h5{
+    color: #fe3c47;
+}
+.subarrow:before{
+    content: '\203A';
+}
+.rotate {
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -moz-transition: -moz-transform 0.5s ease-in-out;
+    -o-transition: -o-transform 0.5s ease-in-out;
+    -ms-transition: -ms-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    cursor:pointer;
+}
+.rotate:hover { 
+color: #3f729b;
+margin-top: 5px;
+-webkit-transform: rotateZ(90deg);
+-moz-transform: rotateZ(90deg);
+-ms-transform: rotateZ(90deg);
+-o-transform: rotateZ(90deg);
+transform: rotateZ(90deg);
+}
+
+
+.btn0{
+	border-radius: 9px;
+	font-family: 'Oswald', sans-serif;
+    color: white;
+    background: orange;
+	font-size: 100%;
+	padding: 10px 20px;
+	border: none;
+	text-transform: uppercase;
+    text-decoration: none;
+    margin: auto;
+}
+.btn0:hover{
+    border: 2 px solid orangered;
+    text-decoration: none;
+}
+.mineul{
+    list-style: none;
+}
+.mineul li{
+    float: left;
+    padding: 10px;
+}
+
+ 
+
+

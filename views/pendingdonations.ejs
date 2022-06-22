@@ -1,0 +1,45 @@
+
+<h3 class="center"> Pending Donations</h3>
+<%- include ('partials/nav') %>
+<%- include ('partials/messages') %>
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="card card-body">
+      <h5 class="center text-success">Pending Donors</h5>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="card card-body">
+      <% if(donations) {%>
+        <% donations.forEach(donation => {%>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Blood Group</th>
+          <th>Location</th>
+          <th>Phone Number</th>
+          <th>Donated ?</th>
+          <th>Confirm  Donation</th>
+        </tr>
+            <tr>
+              <td><%= donation.fullName %></td>
+              <td><%= donation.bloodGroup %></td>
+              <td><%= donation.location %></td>
+              <td><%= donation.phoneNumber %></td>
+              <td><%= donation.donated %></td>
+              <td><a class="text-success" onclick="window.location='/users/pending/<%= donation._id%>';" style="cursor: pointer;"><i class="fa fa-check-square" aria-hidden="true"></i></a></td>
+            </tr>
+      </table>
+      <% }) %>
+    <% } %>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
